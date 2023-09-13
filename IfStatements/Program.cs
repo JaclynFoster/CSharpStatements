@@ -2,8 +2,13 @@
 
 class Program
 {
+    //Challenge 1 variables:
     static string user;
     static string password;
+
+    //Challenge 2 variables:
+    static int highscore = 300;
+    static string highscorePlayer = "Jaclyn";
 
     static void Main(string[] args)
     {
@@ -54,10 +59,17 @@ class Program
 
 
         Console.Read();
-
+        //Challenge 1 Method Calls:
         Register();
         Login();
         Console.Read();
+
+        //Challenge 2 Method Calls:
+        CheckHighScore(250, "Maria");
+        CheckHighScore(315, "Michael");
+        CheckHighScore(350, "Jaclyn");
+        Console.Read();
+
         //Nested If Statements:
         bool isAdmin = false;
         bool isRegistered = true;
@@ -116,7 +128,7 @@ class Program
         }
     }
 
-    //If Statement Challenge:
+    //If Statement Challenge 1:
     public static void Register()
     {
         Console.WriteLine("Please Enter your username:");
@@ -145,6 +157,22 @@ class Program
         else
         {
             Console.WriteLine("Login Failed, wrong username. Please Try Again.");
+        }
+    }
+
+    //If Statement Challenge 2:
+    public static void CheckHighScore(int score, string playerName)
+    {
+        if (score > highscore)
+        {
+            highscore = score;
+            highscorePlayer = playerName;
+
+            Console.WriteLine("New highscore is " + score);
+            Console.WriteLine("New Score now held by: " + playerName);
+        } else
+        {
+            Console.WriteLine("The old highscore could not be broken. It is still: " + highscore + "held by " + highscorePlayer);
         }
     }
 }
