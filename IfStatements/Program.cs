@@ -12,7 +12,47 @@ class Program
 
     static void Main(string[] args)
     {
+        //Ternary Operator Challenge 3:
+        int inputTemp = 0;
+        string tempMessage = string.Empty;
+        string inputValue = string.Empty;
+        Console.Write("Enter the current Temperature:");
+        inputValue = Console.ReadLine();
+        //validate input as valid input integer value
+        bool validInteger = int.TryParse(inputValue, out inputTemp);
 
+        if (validInteger)
+        {
+            tempMessage = inputTemp <= 15 ? "it is too cold here" : (inputTemp >= 16 && inputTemp <= 28) ?
+                "It is cold here" : inputTemp > 28 ? "It is hot here" : "";
+
+            Console.WriteLine(tempMessage);
+        } else
+        {
+            Console.WriteLine("Not a valid temperature");
+        }
+
+        //Ternary Operator Statements: condition ? first_expression: second_expression
+        int temperature = -5;
+        string stateOfMatter;
+        if (temperature < 0)
+        {
+            stateOfMatter = "solid";
+        } else
+        {
+            stateOfMatter = "liquid";
+        }
+        Console.WriteLine("State of matter is {0}", stateOfMatter);
+        //Can change to ternary:
+        stateOfMatter = temperature < 0 ? "Solid" : "Liquid";
+
+        Console.WriteLine("State of matter is {0}", stateOfMatter);
+
+        temperature += 100;
+        stateOfMatter = temperature > 100 ? "gas" : temperature < 0 ? "solid" : "liquid";
+        Console.WriteLine("State of matter is {0}", stateOfMatter);
+
+        Console.Read();
         //Switch Statements:
         int age = 25;
         switch(age)
@@ -126,6 +166,8 @@ class Program
         {
             Console.WriteLine("Parsing Failed");
         }
+
+        Console.ReadKey();
     }
 
     //If Statement Challenge 1:
