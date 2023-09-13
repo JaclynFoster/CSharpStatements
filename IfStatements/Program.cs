@@ -4,6 +4,25 @@ class Program
 {
     static void Main(string[] args)
     {
+        //Nested If Statements:
+        bool isAdmin = false;
+        bool isRegistered = true;
+        string userName = "";
+        Console.WriteLine("Please enter your Username:");
+        userName = Console.ReadLine();
+
+        if (isRegistered)
+        {
+            Console.WriteLine("Hi there,  registered user.");
+            if (userName != "")
+            {
+                Console.WriteLine("Hi there, " + userName);
+                if (userName.Equals("Admin"))
+                {
+                    Console.WriteLine("Hi there, Admin!");
+                }
+            }
+        }
         Console.WriteLine("What is the temp outside?");
         string temp = Console.ReadLine();
         int numTemp = int.Parse(temp);
