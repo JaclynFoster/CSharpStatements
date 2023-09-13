@@ -8,6 +8,53 @@ class Program
     static void Main(string[] args)
     {
 
+        //Switch Statements:
+        int age = 25;
+        switch(age)
+        {
+            case 15:
+                Console.WriteLine("Too young to party in the club");
+                break;
+            case 25:
+                Console.WriteLine("Good to go!");
+                break;
+            default:
+                Console.WriteLine("How old are you then?");
+                break;
+        }
+
+        if (age == 15)
+        {
+            Console.WriteLine("Too young to party in the club");
+        } else if (age == 25)
+        {
+            Console.WriteLine("Good to go!");
+        }
+        else
+        {
+            Console.WriteLine("How old are you then?");
+        }
+
+        //switch with strings:
+        string name = "";
+        switch (name)
+        {
+            case "Jaclyn":
+                Console.WriteLine("Your name is Jaclyn");
+                break;
+            case "Chris":
+                Console.WriteLine("Your name is Chris!");
+                break;
+            default:
+                Console.WriteLine("What is your name?");
+                break;
+        }       
+
+
+
+
+        Console.Read();
+
         Register();
         Login();
         Console.Read();
