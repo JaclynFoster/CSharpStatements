@@ -2,8 +2,15 @@
 
 class Program
 {
+    static string user;
+    static string password;
+
     static void Main(string[] args)
     {
+
+        Register();
+        Login();
+        Console.Read();
         //Nested If Statements:
         bool isAdmin = false;
         bool isRegistered = true;
@@ -22,6 +29,11 @@ class Program
                     Console.WriteLine("Hi there, Admin!");
                 }
             }
+        }
+
+        if (isAdmin || isRegistered)
+        {
+            Console.WriteLine("You are logged in!");
         }
         Console.WriteLine("What is the temp outside?");
         string temp = Console.ReadLine();
@@ -54,6 +66,38 @@ class Program
         else
         {
             Console.WriteLine("Parsing Failed");
+        }
+    }
+
+    //If Statement Challenge:
+    public static void Register()
+    {
+        Console.WriteLine("Please Enter your username:");
+        user = Console.ReadLine();
+        Console.WriteLine("Please enter your password:");
+        password = Console.ReadLine();
+        Console.WriteLine("Registration is completed!");
+        Console.WriteLine("------------------------------------");
+    }
+
+    public static void Login()
+    {
+        Console.WriteLine("Please enter your username:");
+        if (user == Console.ReadLine())
+        {
+            Console.WriteLine("Please enter your password:");
+            if (password == Console.ReadLine())
+            {
+                Console.WriteLine("Login Successful");
+            }
+            else
+            {
+                Console.WriteLine("Login Failed. Incorrect Password");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Login Failed, wrong username. Please Try Again.");
         }
     }
 }
